@@ -15,4 +15,16 @@ body {
     flex: unset !important;
     width: 13rem;
     padding-left: 0px !important;
+    margin-top: -0.25rem;
+}
+
+/* -------- Accordion --------- */
+.p-accordionheader {
+    padding-bottom: 0.4rem !important;
+}
+
+/* --------- Icon ----------- */
+.pi {
+    color: var(--p-purple-400) !important;
+    margin-right: 0.4rem;
 }

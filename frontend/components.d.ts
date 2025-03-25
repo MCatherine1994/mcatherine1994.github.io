@@ -11,6 +11,8 @@ declare module 'vue' {
     EducationSection: typeof import('./src/components/LifeJourney.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     LifeJourney: typeof import('./src/components/LifeJourney.vue')['default']
+    MainPanel: typeof import('./src/components/MainPanel.vue')['default']
+    MLProjects: typeof import('./src/components/MLProjects.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
   }
 }

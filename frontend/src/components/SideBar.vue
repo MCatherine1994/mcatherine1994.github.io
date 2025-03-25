@@ -4,11 +4,11 @@ import Avatar from 'primevue/avatar'
 
 <template>
   <Avatar image="/da.png" class="mr-2 profile-img" size="xlarge" shape="circle" />
-  <h2 id="profile-name">Catherine Meng</h2>
+  <h3 id="profile-name">Hi, I'm Catherine Meng</h3>
+  <h4 id="profile-location"><i class="pi pi-map-marker"></i>Vancouver, Canada</h4>
   <h4 id="profile-title">
-    Full Stack Developer<br />
-    Software Developer <br />
-    Machine Learning Engineer
+    <i class="pi pi-briefcase"></i>Full Stack Developer, Software Developer, Machine Learning
+    Engineer
   </h4>
   <p>Hello world</p>
 </template>

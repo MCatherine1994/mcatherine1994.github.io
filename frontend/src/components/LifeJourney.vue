@@ -1,24 +1,27 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Timeline from 'primevue/timeline'
-import Card from 'primevue/card'
 import Tag from 'primevue/tag'
 import Panel from 'primevue/panel'
 import PanelMenu from 'primevue/panelmenu'
 
-const expandedKeys = ref({});
+const expandedKeys = ref({})
 const events = ref([
   {
-    position: 'Master’s Degree Completion',
+    position: 'Master’s Degree Completion (Data Science)',
     company: 'The University of British Columbia',
     date: 'Jun, 2025',
-    icon: 'pi pi-crown',
+    icon: 'pi pi-graduation-cap',
   },
   {
-    position: 'Pursuing a Master’s in Data Science at the University of British Columbia',
+    position:
+      'Moved to Vancouver and Pursuing a Master’s in Data Science at the University of British Columbia',
     company: 'The University of British Columbia',
     date: 'Sep, 2024',
     icon: 'pi pi-book',
+    language: ['Python (sklearn, pytorch)', 'R', 'Quarto'],
+    database: ['Postgres'],
+    deployment: ['Github Action', 'Github Pages'],
   },
   {
     position: 'Full Stack Developer ',
@@ -103,16 +106,15 @@ const events = ref([
       'Develop a web application with Google Maps integration to assist in business store location selection.',
   },
   {
-    position: 'Front End Developer (co-op/part-time)',
-    company: 'Ministry of Social Development and Poverty Reduction',
-    date: 'May 2019 - Mar 2020',
-    icon: 'pi pi-desktop',
-    summary: 'Same as below.',
+    position: 'Bachelor’s Degree Completion (Computer Science Major with Statistic Minor)',
+    company: 'University of Victoria',
+    date: 'Apr, 2020',
+    icon: 'pi pi-graduation-cap',
   },
   {
-    position: 'Web Application Developer (co-op)',
+    position: 'Web Application Developer / Front End Developer (co-op/part-time)',
     company: 'Ministry of Social Development and Poverty Reduction',
-    date: 'Jun 2018 - Dec 2018',
+    date: 'Jun 2018 - Dec 2018, May 2019 - Mar 2020',
     icon: 'pi pi-desktop',
     language: ['React', 'Node.js', 'D3.js'],
     database: ['MongoDB'],
@@ -186,73 +188,76 @@ const events = ref([
       },
     ],
   },
+  {
+    position:
+      'Moved to Victoria, Canada and Pursued a Bachelor’s in Computer Science at the University of Victoria',
+    company: 'University of Victoria',
+    date: 'Sep, 2015',
+    icon: 'pi pi-book',
+    language: ['C', 'C++', 'Java', 'Python'],
+    database: ['Postgres', 'SQL'],
+  },
 ])
 </script>
 
 <template>
-  <Card>
-    <template #title>Journey</template>
-    <template #content>
-      <Timeline :value="events" class="timeline">
-        <template #marker="slotProps">
-          <span
-            class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
-            :style="{ backgroundColor: slotProps.item.color }"
-          >
-            <i :class="slotProps.item.icon"></i>
-          </span>
-        </template>
-        <template #opposite="slotProps">
-          <small class="text-surface-500 dark:text-surface-400">{{ slotProps.item.date }}</small>
-          <br />
-          <small class="text-surface-500 dark:text-surface-400">{{ slotProps.item.company }}</small>
-        </template>
-        <template #content="slotProps">
-          <Panel
-            :header="slotProps.item.position"
-            toggleable
-            style="margin-bottom: 1.4rem; margin-top: -0.625rem; padding-top: 0.2rem"
-          >
-            <Tag
-              severity="info"
-              :value="language"
-              v-for="language in slotProps.item.language"
-              :key="language"
-              v-if="slotProps.item.language"
-              class="techstack-tag"
-            />
-            <Tag
-              severity="success"
-              :value="database"
-              v-for="database in slotProps.item.database"
-              :key="database"
-              v-if="slotProps.item.database"
-              class="techstack-tag"
-            />
-            <Tag
-              severity="warn"
-              :value="deployment"
-              v-for="deployment in slotProps.item.deployment"
-              :key="deployment"
-              v-if="slotProps.item.deployment"
-              class="techstack-tag"
-            />
-            <p
-              v-if="slotProps.item.summary"
-              v-html="slotProps.item.summary.replace(/\n/g, '<br>')"
-              style="margin-top: 0.4rem; margin-bottom: 0.8rem"
-            ></p>
-            <PanelMenu
-              v-model:expandedKeys="expandedKeys"
-              :model="slotProps.item.detail"
-              v-if="slotProps.item.detail"
-              style="margin-top: 0.25rem"
-            />
-          </Panel>
-        </template>
-      </Timeline>
+  <Timeline :value="events" class="timeline">
+    <template #marker="slotProps">
+      <span
+        class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
+      >
+        <i :class="slotProps.item.icon"></i>
+      </span>
     </template>
-  </Card>
+    <template #opposite="slotProps">
+      <small class="text-surface-500 dark:text-surface-400">{{ slotProps.item.date }}</small>
+      <br />
+      <small class="text-surface-500 dark:text-surface-400">{{ slotProps.item.company }}</small>
+    </template>
+    <template #content="slotProps">
+      <Panel
+        :header="slotProps.item.position"
+        toggleable
+        style="margin-bottom: 2rem; margin-top: -1.15rem"
+      >
+        <Tag
+          severity="info"
+          :value="language"
+          v-for="language in slotProps.item.language"
+          :key="language"
+          v-if="slotProps.item.language"
+          class="techstack-tag"
+        />
+        <Tag
+          severity="success"
+          :value="database"
+          v-for="database in slotProps.item.database"
+          :key="database"
+          v-if="slotProps.item.database"
+          class="techstack-tag"
+        />
+        <Tag
+          severity="warn"
+          :value="deployment"
+          v-for="deployment in slotProps.item.deployment"
+          :key="deployment"
+          v-if="slotProps.item.deployment"
+          class="techstack-tag"
+        />
+        <p
+          v-if="slotProps.item.summary"
+          v-html="slotProps.item.summary.replace(/\n/g, '<br>')"
+          style="margin-top: 0.4rem; margin-bottom: 0.8rem"
+        ></p>
+        <PanelMenu
+          v-model:expandedKeys="expandedKeys"
+          :model="slotProps.item.detail"
+          v-if="slotProps.item.detail"
+          style="margin-top: 0.25rem"
+        />
+      </Panel>
+    </template>
+  </Timeline>
 </template>
 
 <style scoped>
