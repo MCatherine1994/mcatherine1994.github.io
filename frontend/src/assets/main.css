@@ -2,12 +2,17 @@ body {
   margin: 0rem;
 }
 
-
 /* -------- Splitter --------- */
 .p-splitter {
-    border: none !important;
+  border: none !important;
 }
 
 .p-splitter-gutter {
-    background-color: white !important;
+  background: var(--p-purple-50) !important;
+}
+
+.p-timeline-event-opposite {
+    flex: unset !important;
+    width: 13rem;
+    padding-left: 0px !important;
 }

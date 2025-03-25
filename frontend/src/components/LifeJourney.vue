@@ -1,0 +1,267 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import Timeline from 'primevue/timeline'
+import Card from 'primevue/card'
+import Tag from 'primevue/tag'
+import Panel from 'primevue/panel'
+import PanelMenu from 'primevue/panelmenu'
+
+const expandedKeys = ref({});
+const events = ref([
+  {
+    position: 'Master’s Degree Completion',
+    company: 'The University of British Columbia',
+    date: 'Jun, 2025',
+    icon: 'pi pi-crown',
+  },
+  {
+    position: 'Pursuing a Master’s in Data Science at the University of British Columbia',
+    company: 'The University of British Columbia',
+    date: 'Sep, 2024',
+    icon: 'pi pi-book',
+  },
+  {
+    position: 'Full Stack Developer ',
+    company: 'Ministry of Environment',
+    date: 'Feb, 2022',
+    icon: 'pi pi-desktop',
+    language: ['Vue3', 'Python FastAPI', 'Nestjs', 'Spring Boot Java'],
+    database: ['Postgres', 'Oracle'],
+    deployment: ['Github Action', 'Openshift cluster', 'AWS Cloud', 'AWS Pipeline'],
+    summary:
+      'Collaborate in an Agile team with product owners, service designers, developers, and stakeholders to meet business requirements:',
+    detail: [
+      {
+        key: 0,
+        label: 'Develop a web application for online form submissions',
+        items: [
+          {
+            label: '- Contribute to UI design and develop the frontend using Vue 3',
+          },
+          {
+            label: '- Build backend APIs using Spring Boot and Java',
+          },
+          {
+            label:
+              '- Design the data model and create a PostgreSQL database, including backup and restore processes',
+          },
+          {
+            label:
+              '- Manage the deployment process using GitHub Actions and deploy to an OpenShift cluster',
+          },
+        ],
+      },
+      {
+        key: 1,
+        label:
+          'Develop an access management application to integrate with other applications and enable administrators to manage user access',
+        items: [
+          {
+            label: '- Develop the frontend UI using Vue 3',
+          },
+          {
+            label: '- Build backend APIs using Python FastAPI',
+          },
+          {
+            label:
+              '- Design user access control and integrate authentication using Keycloak and AWS Cognito',
+          },
+          {
+            label:
+              '- Automate deployment with GitHub Actions and deploy to AWS Cloud (Terraform, EC2, S3, Lambda, RDS, Cognito, API Gateway, CloudFront)',
+          },
+          {
+            label:
+              '- Work closely with service designers to understand business requirements, contribute to technical decisions, and define work plans',
+          },
+          {
+            label: '- Mentor junior and intermediate developers, providing training and guidance',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    position: 'Software Developer',
+    company: 'University of Victoria',
+    date: 'Oct, 2020',
+    icon: 'pi pi-desktop',
+    language: ['Python Django', 'HTCondor'],
+    database: ['MySql'],
+    deployment: ['Openstack'],
+    summary:
+      'Maintain a web application for tracking and allocating virtual machine resources in OpenStack. \n' +
+      'Build and manage Python pip packages.',
+  },
+  {
+    position: 'Frontend Developer',
+    company: 'Tetrad Computer Applications',
+    date: 'Jul, 2020',
+    icon: 'pi pi-desktop',
+    language: ['React', 'Redux', 'Node.js', 'Restful API'],
+    summary:
+      'Develop a web application with Google Maps integration to assist in business store location selection.',
+  },
+  {
+    position: 'Front End Developer (co-op/part-time)',
+    company: 'Ministry of Social Development and Poverty Reduction',
+    date: 'May 2019 - Mar 2020',
+    icon: 'pi pi-desktop',
+    summary: 'Same as below.',
+  },
+  {
+    position: 'Web Application Developer (co-op)',
+    company: 'Ministry of Social Development and Poverty Reduction',
+    date: 'Jun 2018 - Dec 2018',
+    icon: 'pi pi-desktop',
+    language: ['React', 'Node.js', 'D3.js'],
+    database: ['MongoDB'],
+    deployment: ['Gitlab', 'Azure DevOps'],
+    detail: [
+      {
+        key: 2,
+        label:
+          'Develop a Node.js application using the Meteor web framework and React UI pattern, leveraging the D3.js library for data visualization of government-related assistant data',
+        items: [
+          {
+            label:
+              '- Develop reusable React components and dynamic, data-rich D3.js charts with smooth transitions',
+          },
+          {
+            label: '- Process and manage data using MongoDB, Python, and SQL',
+          },
+          {
+            label:
+              '- Implement unit, integration, and functional tests using Jest, Enzyme, and Puppeteer',
+          },
+          {
+            label: '- Create and maintain private Node.js packages',
+          },
+          {
+            label:
+              '- Utilize continuous integration and development (CI/CD) tools such as GitLab and Azure DevOps',
+          },
+          {
+            label:
+              '- Set up and maintain a GitLab server, including creating virtual machines using Oracle VirtualBox',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    position: 'IT - Applicant (co-op)',
+    company: 'BC Transit',
+    date: 'Jan 2018 - Apr 2018',
+    icon: 'pi pi-desktop',
+    language: ['SQL'],
+    summary:
+      'Design and build data models using SQL queries, and create reports with BI Publisher and Crystal Reports. \n' +
+      'Attend Agile and DevOps training with QAcademy.',
+  },
+  {
+    position: 'Business System Analysis (co-op)',
+    company: 'Maximus',
+    date: 'Jan 2017 - Dec 2017',
+    icon: 'pi pi-desktop',
+    language: ['SQL'],
+    detail: [
+      {
+        key: 3,
+        label:
+          'Conduct functional, smoke, regression, joint system integration, and business acceptance testing:',
+        items: [
+          {
+            label:
+              '- Create and manage test data using SQL Developer; write and execute test cases in SilkCentral; regularly analyze test results; track and manage change requests in StarTeam',
+          },
+          {
+            label: '- Document and track information using SharePoint',
+          },
+          {
+            label:
+              '- Collaborate with a cross-functional team, contributing to project planning and implementation',
+          },
+        ],
+      },
+    ],
+  },
+])
+</script>
+
+<template>
+  <Card>
+    <template #title>Journey</template>
+    <template #content>
+      <Timeline :value="events" class="timeline">
+        <template #marker="slotProps">
+          <span
+            class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
+            :style="{ backgroundColor: slotProps.item.color }"
+          >
+            <i :class="slotProps.item.icon"></i>
+          </span>
+        </template>
+        <template #opposite="slotProps">
+          <small class="text-surface-500 dark:text-surface-400">{{ slotProps.item.date }}</small>
+          <br />
+          <small class="text-surface-500 dark:text-surface-400">{{ slotProps.item.company }}</small>
+        </template>
+        <template #content="slotProps">
+          <Panel
+            :header="slotProps.item.position"
+            toggleable
+            style="margin-bottom: 1.4rem; margin-top: -0.625rem; padding-top: 0.2rem"
+          >
+            <Tag
+              severity="info"
+              :value="language"
+              v-for="language in slotProps.item.language"
+              :key="language"
+              v-if="slotProps.item.language"
+              class="techstack-tag"
+            />
+            <Tag
+              severity="success"
+              :value="database"
+              v-for="database in slotProps.item.database"
+              :key="database"
+              v-if="slotProps.item.database"
+              class="techstack-tag"
+            />
+            <Tag
+              severity="warn"
+              :value="deployment"
+              v-for="deployment in slotProps.item.deployment"
+              :key="deployment"
+              v-if="slotProps.item.deployment"
+              class="techstack-tag"
+            />
+            <p
+              v-if="slotProps.item.summary"
+              v-html="slotProps.item.summary.replace(/\n/g, '<br>')"
+              style="margin-top: 0.4rem; margin-bottom: 0.8rem"
+            ></p>
+            <PanelMenu
+              v-model:expandedKeys="expandedKeys"
+              :model="slotProps.item.detail"
+              v-if="slotProps.item.detail"
+              style="margin-top: 0.25rem"
+            />
+          </Panel>
+        </template>
+      </Timeline>
+    </template>
+  </Card>
+</template>
+
+<style scoped>
+.timeline {
+  padding-top: 0.825rem;
+}
+
+.techstack-tag {
+  margin-right: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+</style>

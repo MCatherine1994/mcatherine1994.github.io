@@ -8,7 +8,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    EducationSection: typeof import('./src/components/LifeJourney.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    LifeJourney: typeof import('./src/components/LifeJourney.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
   }
 }

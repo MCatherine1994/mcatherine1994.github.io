@@ -3,11 +3,12 @@ import Splitter from 'primevue/splitter'
 import SplitterPanel from 'primevue/splitterpanel'
 
 import SideBar from '@/components/SideBar.vue'
+import LifeJourney from '@/components/LifeJourney.vue'
 </script>
 
 <template>
   <main>
-    <Splitter style="height: 100vh">
+    <Splitter>
       <SplitterPanel
         class="flex align-items-center justify-content-center sidebar"
         :size="17"
@@ -15,8 +16,8 @@ import SideBar from '@/components/SideBar.vue'
       >
         <SideBar />
       </SplitterPanel>
-      <SplitterPanel class="flex align-items-center justify-content-center" :size="83">
-        Panel 2
+      <SplitterPanel class="flex align-items-center justify-content-center content" :size="83">
+        <LifeJourney />
       </SplitterPanel>
     </Splitter>
   </main>
@@ -24,7 +25,12 @@ import SideBar from '@/components/SideBar.vue'
 
 <style scoped>
 .sidebar {
-  padding: 0.625rem;
+  padding: 1.25rem;
   background-color: var(--p-purple-100);
+}
+.content {
+  padding: 0.3rem;
+  padding-left: 0.2rem;
+  background-color: var(--p-purple-50);
 }
 </style>
