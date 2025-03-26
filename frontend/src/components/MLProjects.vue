@@ -13,9 +13,10 @@ import Tag from 'primevue/tag'
         <AccordionHeader>
           <span class="flex items-center gap-2 w-full">
             <Tag severity="info" value="Machine Learning" class="project-tag" />
-            <span class="font-bold whitespace-nowrap"
+            <span class="font-bold whitespace-nowrap project-tag"
               >Predicting academic success of undergraduate students</span
             >
+            <Tag severity="warn" value="Python Skilearn" class="project-tag" />
           </span>
         </AccordionHeader>
         <AccordionContent>
@@ -50,9 +51,11 @@ import Tag from 'primevue/tag'
         <AccordionHeader
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
-            <span class="font-bold whitespace-nowrap">Pharmaceutical Spending Dashboard</span>
-          </span></AccordionHeader
-        >
+            <span class="font-bold whitespace-nowrap project-tag"
+              >Pharmaceutical Spending Dashboard</span
+            >
+            <Tag severity="warn" value="Python Dash" class="project-tag" /> </span
+        ></AccordionHeader>
         <AccordionContent>
           <p class="m-0">
             Group project to create an intuitive tool to help healthcare policy administrators
@@ -72,16 +75,24 @@ import Tag from 'primevue/tag'
             <a href="https://dsci-532-2025-17-pharma-spend-dashboard.onrender.com/"
               >https://dsci-532-2025-17-pharma-spend-dashboard.onrender.com/</a
             >
+            <br />
+            <small class="text-surface-500 dark:text-surface-400"
+              >Note: The project is deployed on <a href="https://render.com/">Render.com</a>. The
+              initial loading takes around 2 mins because we are on a free server.</small
+            >
           </p>
+          <img src="@/assets/project_pharma_demo.gif" alt="GIF" />
         </AccordionContent>
       </AccordionPanel>
       <AccordionPanel value="2">
         <AccordionHeader
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
-            <span class="font-bold whitespace-nowrap">Country Comparison Dashboard</span>
-          </span></AccordionHeader
-        >
+            <span class="font-bold whitespace-nowrap project-tag"
+              >Country Comparison Dashboard</span
+            >
+            <Tag severity="warn" value="R Shinny" class="project-tag" /> </span
+        ></AccordionHeader>
         <AccordionContent>
           <p class="m-0">
             This interactive dashboard provides a comprehensive platform for comparing key global
@@ -100,6 +111,7 @@ import Tag from 'primevue/tag'
               >https://github.ubc.ca/mds-2024-25/DSCI_532_individual-assignment_cmeng</a
             >
           </p>
+          <img src="@/assets/project_country_demo.gif" alt="GIF" style="width: 80%" />
         </AccordionContent>
       </AccordionPanel>
     </Accordion>
