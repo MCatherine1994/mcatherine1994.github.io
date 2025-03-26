@@ -11,12 +11,12 @@ import MainPanel from '@/components/MainPanel.vue'
     <Splitter style="min-height: 100vh">
       <SplitterPanel
         class="flex align-items-center justify-content-center sidebar"
-        :size="17"
+        :size="18"
         :minSize="10"
       >
         <SideBar />
       </SplitterPanel>
-      <SplitterPanel class="flex align-items-center justify-content-center content" :size="83">
+      <SplitterPanel class="flex align-items-center justify-content-center content" :size="82">
         <MainPanel />
       </SplitterPanel>
     </Splitter>
@@ -25,7 +25,7 @@ import MainPanel from '@/components/MainPanel.vue'
 
 <style scoped>
 .sidebar {
-  padding: 1.25rem;
+  padding: 1rem;
   background-color: var(--p-purple-100);
 }
 .content {

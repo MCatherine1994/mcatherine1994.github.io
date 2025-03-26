@@ -13,6 +13,7 @@ declare module 'vue' {
     LifeJourney: typeof import('./src/components/LifeJourney.vue')['default']
     MainPanel: typeof import('./src/components/MainPanel.vue')['default']
     MLProjects: typeof import('./src/components/MLProjects.vue')['default']
+    ScorpioIcon: typeof import('./src/components/icons/ScorpioIcon.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
   }
 }

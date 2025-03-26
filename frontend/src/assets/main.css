@@ -26,5 +26,14 @@ body {
 /* --------- Icon ----------- */
 .pi {
     color: var(--p-purple-400) !important;
+}
+
+.icon {
     margin-right: 0.4rem;
+}
+
+/* --------- Tooltip ----------- */
+.p-tooltip-text {
+    background-color: var(--p-purple-50) !important;
+    color: var(--p-content-color) !important;
 }

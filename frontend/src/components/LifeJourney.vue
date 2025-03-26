@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, defineOptions } from 'vue'
 import Timeline from 'primevue/timeline'
 import Tag from 'primevue/tag'
 import Panel from 'primevue/panel'
 import PanelMenu from 'primevue/panelmenu'
+import Tooltip from 'primevue/tooltip'
+
+defineOptions({
+  directives: {
+    Tooltip, // register Primevue Tooltip locally
+  },
+})
 
 const expandedKeys = ref({})
 const events = ref([
@@ -15,13 +22,47 @@ const events = ref([
   },
   {
     position:
-      'Moved to Vancouver and Pursuing a Master’s in Data Science at the University of British Columbia',
+      'Pursuing a Master’s in Data Science at the University of British Columbia',
     company: 'The University of British Columbia',
     date: 'Sep, 2024',
     icon: 'pi pi-book',
     language: ['Python (sklearn, pytorch)', 'R', 'Quarto'],
     database: ['Postgres'],
     deployment: ['Github Action', 'Github Pages'],
+    summary: 'Main courses:',
+    courses: [
+      {
+        name: 'Supervised Learning I, II (CNN)',
+        tooltip:
+          'Introduction to supervised machine learning. Basic machine learning concepts such as generalization error and overfitting. Various approaches such as K-NN, decision trees, linear classifiers. \n' +
+          'Introduction to numerical optimization (e.g., gradient descent). Neural networks and deep learning. \n',
+      },
+      {
+        name: 'Unsupervised Learning (PCA)',
+        tooltip:
+          'How to find groups and other structure in unlabeled, possibly high dimensional data. Dimension reduction for visualization and data analysis. Clustering, association rules, model fitting via the EM algorithm.',
+      },
+      {
+        name: 'Advanced Machine Learning (NLP)',
+        tooltip:
+          'Advanced machine learning methods, with an undercurrent of natural language processing (NLP) applications. Bag of words, recommender systems, topic models, natural language as sequence data, Markov chains, and RNNs for text synthesis. An introduction to popular NLP libraries in Python.',
+      },
+      {
+        name: 'Feature and Model Selection',
+        tooltip:
+          'How to evaluate and select features and models. Cross-validation, ROC curves, feature engineering, and regularization.',
+      },
+      {
+        name: 'Spatial and Temporal Model (RNN)',
+        tooltip:
+          'Model fitting and prediction in the presence of correlation due to temporal and/or spatial association. ARIMA models.',
+      },
+      {
+        name: 'Web and Cloud Computing (AWS)',
+        tooltip:
+          'How to use the web as a platform for data collection, computation, and publishing. Accessing data via scraping and APIs. Using the cloud for tasks that are beyond the capability of your local computing resources.',
+      },
+    ],
   },
   {
     position: 'Full Stack Developer ',
@@ -35,6 +76,7 @@ const events = ref([
       'Collaborate in an Agile team with product owners, service designers, developers, and stakeholders to meet business requirements:',
     detail: [
       {
+        // special data structure to support Primevue PanelMenu
         key: 0,
         label: 'Develop a web application for online form submissions',
         items: [
@@ -171,7 +213,7 @@ const events = ref([
       {
         key: 3,
         label:
-          'Conduct functional, smoke, regression, joint system integration, and business acceptance testing:',
+          'Conduct functional, smoke, regression, joint system integration, and business acceptance testing',
         items: [
           {
             label:
@@ -190,7 +232,7 @@ const events = ref([
   },
   {
     position:
-      'Moved to Victoria, Canada and Pursued a Bachelor’s in Computer Science at the University of Victoria',
+      'Pursued a Bachelor’s in Computer Science at the University of Victoria',
     company: 'University of Victoria',
     date: 'Sep, 2015',
     icon: 'pi pi-book',
@@ -203,9 +245,7 @@ const events = ref([
 <template>
   <Timeline :value="events" class="timeline">
     <template #marker="slotProps">
-      <span
-        class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
-      >
+      <span class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm">
         <i :class="slotProps.item.icon"></i>
       </span>
     </template>
@@ -255,6 +295,10 @@ const events = ref([
           v-if="slotProps.item.detail"
           style="margin-top: 0.25rem"
         />
+        <span v-for="(course, index) in slotProps.item.courses" :key="course.name">
+          <u v-tooltip.top="{ autoHide: false, value: course.tooltip }" class="hover-underline">{{ course.name }}</u>
+          <span v-if="index !== slotProps.item.courses.length - 1">, </span>
+        </span>
       </Panel>
     </template>
   </Timeline>
@@ -268,5 +312,13 @@ const events = ref([
 .techstack-tag {
   margin-right: 0.625rem;
   margin-bottom: 0.625rem;
+}
+
+.hover-underline {
+  cursor: pointer;
+}
+
+.hover-underline:hover {
+  text-decoration: none;
 }
 </style>

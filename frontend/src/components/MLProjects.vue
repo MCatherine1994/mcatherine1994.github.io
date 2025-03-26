@@ -14,7 +14,7 @@ import Tag from 'primevue/tag'
           <span class="flex items-center gap-2 w-full">
             <Tag severity="info" value="Machine Learning" class="project-tag" />
             <span class="font-bold whitespace-nowrap project-tag"
-              >Predicting academic success of undergraduate students</span
+              >Predicting academic success of undergraduate students (2024)</span
             >
             <Tag severity="warn" value="Python Skilearn" class="project-tag" />
           </span>
@@ -26,21 +26,21 @@ import Tag from 'primevue/tag'
             academic path, demographics, and socio-economic factors).
           </p>
           <p class="m-0">
-            <i class="pi pi-github"></i>
+            <i class="pi pi-github icon"></i>
             Github Repository:
             <a href="https://github.com/UBC-MDS/academic-success-prediction"
               >https://github.com/UBC-MDS/academic-success-prediction</a
             >
           </p>
           <p class="m-0">
-            <i class="pi pi-receipt"></i> Quarto Report:
+            <i class="pi pi-receipt icon"></i> Quarto Report:
             <a
               href="https://ubc-mds.github.io/academic-success-prediction/report/academic-success-prediction"
               >https://ubc-mds.github.io/academic-success-prediction/report/academic-success-prediction</a
             >
           </p>
           <p class="m-0">
-            <i class="pi pi-receipt"></i> Blog:
+            <i class="pi pi-receipt icon"></i> Blog:
             <a href="https://mcatherine1994.github.io/542Lab2Blog/posts/welcome/"
               >https://mcatherine1994.github.io/542Lab2Blog/posts/welcome/</a
             >
@@ -52,7 +52,7 @@ import Tag from 'primevue/tag'
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
             <span class="font-bold whitespace-nowrap project-tag"
-              >Pharmaceutical Spending Dashboard</span
+              >Pharmaceutical Spending Dashboard (2025)</span
             >
             <Tag severity="warn" value="Python Dash" class="project-tag" /> </span
         ></AccordionHeader>
@@ -64,14 +64,14 @@ import Tag from 'primevue/tag'
             decision-ready intelligence for daily decision-making.
           </p>
           <p class="m-0">
-            <i class="pi pi-github"></i>
+            <i class="pi pi-github icon"></i>
             Github Repository:
             <a href="https://github.com/UBC-MDS/DSCI-532_2025_17_pharma_spend_dashboard"
               >https://github.com/UBC-MDS/DSCI-532_2025_17_pharma_spend_dashboard</a
             >
           </p>
           <p class="m-0">
-            <i class="pi pi-link"></i> Deployment:
+            <i class="pi pi-link icon"></i> Deployment:
             <a href="https://dsci-532-2025-17-pharma-spend-dashboard.onrender.com/"
               >https://dsci-532-2025-17-pharma-spend-dashboard.onrender.com/</a
             >
@@ -89,7 +89,7 @@ import Tag from 'primevue/tag'
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
             <span class="font-bold whitespace-nowrap project-tag"
-              >Country Comparison Dashboard</span
+              >Country Comparison Dashboard (2025)</span
             >
             <Tag severity="warn" value="R Shinny" class="project-tag" /> </span
         ></AccordionHeader>
@@ -105,7 +105,7 @@ import Tag from 'primevue/tag'
             comparisons.
           </p>
           <p class="m-0">
-            <i class="pi pi-github"></i>
+            <i class="pi pi-github icon"></i>
             Github Repository:
             <a href="https://github.ubc.ca/mds-2024-25/DSCI_532_individual-assignment_cmeng"
               >https://github.ubc.ca/mds-2024-25/DSCI_532_individual-assignment_cmeng</a
