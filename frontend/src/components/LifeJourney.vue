@@ -6,6 +6,7 @@ import Panel from 'primevue/panel'
 import PanelMenu from 'primevue/panelmenu'
 import Tooltip from 'primevue/tooltip'
 import Carousel from 'primevue/carousel'
+import UBCVlog from '@/components/UBCVlog.vue'
 import { MemoryService } from '@/service/MemoryService'
 
 defineOptions({
@@ -38,7 +39,7 @@ const events = ref([
     language: ['Python (sklearn, pytorch)', 'R', 'Quarto'],
     database: ['Postgres'],
     deployment: ['Github Action', 'Github Pages'],
-    summary: 'Main courses:',
+    summary: 'Main courses as below and feel free to check my vlogs &#x1F609;:',
     courses: [
       {
         name: 'Supervised Learning I, II (CNN)',
@@ -84,7 +85,7 @@ const events = ref([
     ],
   },
   {
-    position: 'Full Stack Developer ',
+    position: 'Full Stack Developer (full time)',
     company: 'Ministry of Environment',
     date: 'Feb, 2022',
     icon: 'pi pi-desktop',
@@ -146,7 +147,7 @@ const events = ref([
     ],
   },
   {
-    position: 'Software Developer',
+    position: 'Software Developer (full time)',
     company: 'University of Victoria',
     date: 'Oct, 2020',
     icon: 'pi pi-desktop',
@@ -158,7 +159,7 @@ const events = ref([
       'Build and manage Python pip packages.',
   },
   {
-    position: 'Frontend Developer',
+    position: 'Frontend Developer (contract)',
     company: 'Tetrad Computer Applications',
     date: 'Jul, 2020',
     icon: 'pi pi-desktop',
@@ -318,6 +319,7 @@ const events = ref([
           }}</u>
           <span v-if="index !== slotProps.item.courses.length - 1">, </span>
         </span>
+        <UBCVlog v-if="slotProps.item.date == 'Sep, 2024'"/>
         <div class="card">
           <Carousel
             :value="vicMemorys"

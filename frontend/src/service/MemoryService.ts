@@ -8,7 +8,7 @@ export const MemoryService = {
       },
       {
         id: '2',
-        description: 'Another beautiful harbour view',
+        description: 'Beautiful harbour view',
         image: 'harbour.JPG',
       },
       {
@@ -43,7 +43,7 @@ export const MemoryService = {
       },
       {
         id: '9',
-        description: 'Participate battle snake compitition',
+        description: 'Participating in the Battle Snake competition',
         image: 'battle_snake.JPG',
       },
       {
@@ -58,17 +58,17 @@ export const MemoryService = {
       },
       {
         id: '12',
-        description: 'A night with large cloudy cloud',
+        description: 'A night with a large, cloudy sky',
         image: 'night.JPG',
       },
       {
         id: '13',
-        description: 'Chrtimas light at Butchart Garden',
+        description: 'Christmas lights at Butchart Garden',
         image: 'butchart_garden.JPG',
       },
       {
         id: '14',
-        description: 'My Graduation day at UVic',
+        description: 'My graduation day at UVic',
         image: 'uvic_graduation.JPG',
       },
     ]

@@ -4,7 +4,13 @@ import ScorpioIcon from '@/components/icons/ScorpioIcon.vue'
 </script>
 
 <template>
-  <Avatar image="/da.png" class="mr-2 profile-img" size="xlarge" shape="circle" />
+  <Avatar
+    image="/da.png"
+    class="mr-2 profile-img"
+    size="xlarge"
+    shape="circle"
+    style="width: 100%; height: auto"
+  />
   <h3 id="profile-name">Hi, I'm Catherine Meng <ScorpioIcon /></h3>
   <p id="profile-location" style="margin-bottom: 0.2rem">
     <i class="pi pi-map-marker sidebar-icon"></i>From Tianjin, China to
@@ -16,8 +22,10 @@ import ScorpioIcon from '@/components/icons/ScorpioIcon.vue'
   <p style="padding-left: 1.62rem; margin-bottom: 0.2rem">Software Developer</p>
   <p style="padding-left: 1.62rem; margin-bottom: 0.2rem">Data Scientist</p>
   <p style="padding-left: 1.62rem">Machine Learning Engineer</p>
-  <h4 style="margin-top: 1rem; margin-bottom: 0rem">Go wherever your heart leads you—boldly and confidently, with no hesitation.</h4>
-  <h4 style="margin-top: 0.5rem;">本心指引你去哪里， 你就大大方方地去，理直气壮地去。</h4>
+  <h4 style="margin-top: 1rem; margin-bottom: 0rem">
+    Go wherever your heart leads you—boldly and confidently, with no hesitation.
+  </h4>
+  <h4 style="margin-top: 0.5rem">本心指引你去哪里， 你就大大方方地去，理直气壮地去。</h4>
 </template>
 
 <style scoped>

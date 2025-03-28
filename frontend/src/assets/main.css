@@ -43,6 +43,11 @@ body {
   color: var(--p-content-color) !important;
 }
 
+/* -------- Slider ------------ */
+.p-slider-handle:focus {
+  outline: none !important;
+}
+
 /* ------- Responsive on phone screen ------ */
 @media (max-width: 768px) {
   /* hide timeline date */

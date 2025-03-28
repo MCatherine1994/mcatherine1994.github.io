@@ -17,5 +17,7 @@ declare module 'vue' {
     MLProjects: typeof import('./src/components/MLProjects.vue')['default']
     ScorpioIcon: typeof import('./src/components/icons/ScorpioIcon.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
+    Slider: typeof import('primevue/slider')['default']
+    UBCVlog: typeof import('./src/components/UBCVlog.vue')['default']
   }
 }
