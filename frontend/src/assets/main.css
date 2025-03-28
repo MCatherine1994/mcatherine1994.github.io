@@ -11,29 +11,47 @@ body {
   background: var(--p-purple-50) !important;
 }
 
+/* -------- Timeline ----------- */
 .p-timeline-event-opposite {
-    flex: unset !important;
-    width: 13rem;
-    padding-left: 0px !important;
-    margin-top: -0.25rem;
+  flex: unset !important;
+  width: 13rem;
+  padding-left: 0px !important;
+  margin-top: -0.25rem;
+}
+
+.p-timeline-event-content {
+  overflow: auto;
 }
 
 /* -------- Accordion --------- */
 .p-accordionheader {
-    padding-bottom: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
 }
 
 /* --------- Icon ----------- */
 .pi {
-    color: var(--p-purple-400) !important;
+  color: var(--p-purple-400) !important;
 }
 
 .icon {
-    margin-right: 0.4rem;
+  margin-right: 0.4rem;
 }
 
 /* --------- Tooltip ----------- */
 .p-tooltip-text {
-    background-color: var(--p-purple-50) !important;
-    color: var(--p-content-color) !important;
+  background-color: var(--p-purple-50) !important;
+  color: var(--p-content-color) !important;
+}
+
+/* ------- Responsive on phone screen ------ */
+@media (max-width: 768px) {
+  /* hide timeline date */
+  .p-timeline-event-opposite {
+    display: none !important;
+  }
+
+  /* hide sidebar */
+  .sidebar {
+    display: none !important;
+  }
 }

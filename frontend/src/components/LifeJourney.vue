@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref, defineOptions } from 'vue'
+import { ref, defineOptions, onMounted } from 'vue'
 import Timeline from 'primevue/timeline'
 import Tag from 'primevue/tag'
 import Panel from 'primevue/panel'
 import PanelMenu from 'primevue/panelmenu'
 import Tooltip from 'primevue/tooltip'
+import Carousel from 'primevue/carousel'
+import { MemoryService } from '@/service/MemoryService'
 
 defineOptions({
   directives: {
@@ -12,10 +14,16 @@ defineOptions({
   },
 })
 
+onMounted(() => {
+  MemoryService.getVicMemory().then((data) => (vicMemorys.value = data))
+})
+
+const vicMemorys = ref() // image informations for study in Victoria
+
 const expandedKeys = ref({})
 const events = ref([
   {
-    position: 'Master’s Degree Completion (Data Science)',
+    position: "Master's Degree Completion (Data Science)",
     company: 'The University of British Columbia',
     date: 'Jun, 2025',
     icon: 'pi pi-graduation-cap',
@@ -23,7 +31,7 @@ const events = ref([
       "I started this journey with an open mind, unsure whether I wanted to switch careers. While I wasn't ready to leave my past experience behind, diving into AI algorithms sparked a real interest. Now, I'm excited about the possibility—working as a developer in an AI team feels like a natural next step. I'm looking forward to the future and the many opportunities ahead, and I'm eager to collaborate with like-minded professionals along the way. &#x1F680;",
   },
   {
-    position: 'Pursuing a Master’s in Data Science at the University of British Columbia',
+    position: "Pursuing a Master's in Data Science at the University of British Columbia",
     company: 'The University of British Columbia',
     date: 'Sep, 2024',
     icon: 'pi pi-book',
@@ -244,13 +252,13 @@ const events = ref([
     ],
   },
   {
-    position: 'Pursued a Bachelor’s in Computer Science at the University of Victoria',
+    position: "Pursued a Bachelor's in Computer Science at the University of Victoria",
     company: 'University of Victoria',
     date: 'Sep, 2015',
     icon: 'pi pi-book',
     language: ['C', 'C++', 'Java', 'Python'],
     database: ['Postgres', 'SQL'],
-    summary: 'Captured Moments:'
+    summary: 'Captured Moments:',
   },
 ])
 </script>
@@ -268,11 +276,7 @@ const events = ref([
       <small class="text-surface-500 dark:text-surface-400">{{ slotProps.item.company }}</small>
     </template>
     <template #content="slotProps">
-      <Panel
-        :header="slotProps.item.position"
-        toggleable
-        style="margin-bottom: 2rem; margin-top: -1.15rem"
-      >
+      <Panel :header="slotProps.item.position" toggleable style="margin-bottom: 2rem">
         <Tag
           severity="info"
           :value="language"
@@ -314,6 +318,35 @@ const events = ref([
           }}</u>
           <span v-if="index !== slotProps.item.courses.length - 1">, </span>
         </span>
+        <div class="card">
+          <Carousel
+            :value="vicMemorys"
+            :numVisible="3"
+            :numScroll="3"
+            circular
+            :autoplayInterval="3000"
+            v-if="slotProps.item.date == 'Sep, 2015'"
+          >
+            <template #item="slotVicProps">
+              <div
+                class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4"
+                style="margin-right: 1rem"
+              >
+                <div class="mb-4">
+                  <div class="relative mx-auto">
+                    <img
+                      :src="'/img/' + slotVicProps.data.image"
+                      :alt="slotVicProps.data.description"
+                      class="rounded"
+                      style="width: 100%; height: auto"
+                    />
+                  </div>
+                </div>
+                <div class="mb-4 font-medium">{{ slotVicProps.data.description }}</div>
+              </div>
+            </template>
+          </Carousel>
+        </div>
       </Panel>
     </template>
   </Timeline>
