@@ -14,6 +14,7 @@ import ScorpioIcon from '@/components/icons/ScorpioIcon.vue'
     <i class="pi pi-briefcase sidebar-icon"></i>Full Stack Developer
   </p>
   <p style="padding-left: 1.62rem; margin-bottom: 0.2rem">Software Developer</p>
+  <p style="padding-left: 1.62rem; margin-bottom: 0.2rem">Data Scientist</p>
   <p style="padding-left: 1.62rem">Machine Learning Engineer</p>
   <h4 style="margin-top: 1rem; margin-bottom: 0rem">Go wherever your heart leads you—boldly and confidently, with no hesitation.</h4>
   <h4 style="margin-top: 0.5rem;">本心指引你去哪里， 你就大大方方地去，理直气壮地去。</h4>

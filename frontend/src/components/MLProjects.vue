@@ -81,7 +81,7 @@ import Tag from 'primevue/tag'
               initial loading takes around 2 mins because we are on a free server.</small
             >
           </p>
-          <img src="@/assets/project_pharma_demo.gif" alt="GIF" />
+          <img src="@/assets/img/project_pharma_demo.gif" alt="GIF" />
         </AccordionContent>
       </AccordionPanel>
       <AccordionPanel value="2">
@@ -111,7 +111,7 @@ import Tag from 'primevue/tag'
               >https://github.ubc.ca/mds-2024-25/DSCI_532_individual-assignment_cmeng</a
             >
           </p>
-          <img src="@/assets/project_country_demo.gif" alt="GIF" style="width: 80%" />
+          <img src="@/assets/img/project_country_demo.gif" alt="GIF" style="width: 80%" />
         </AccordionContent>
       </AccordionPanel>
     </Accordion>

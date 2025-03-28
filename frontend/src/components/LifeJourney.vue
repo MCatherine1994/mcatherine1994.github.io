@@ -19,10 +19,11 @@ const events = ref([
     company: 'The University of British Columbia',
     date: 'Jun, 2025',
     icon: 'pi pi-graduation-cap',
+    summary:
+      "I started this journey with an open mind, unsure whether I wanted to switch careers. While I wasn't ready to leave my past experience behind, diving into AI algorithms sparked a real interest. Now, I'm excited about the possibility—working as a developer in an AI team feels like a natural next step. I'm looking forward to the future and the many opportunities ahead, and I'm eager to collaborate with like-minded professionals along the way. &#x1F680;",
   },
   {
-    position:
-      'Pursuing a Master’s in Data Science at the University of British Columbia',
+    position: 'Pursuing a Master’s in Data Science at the University of British Columbia',
     company: 'The University of British Columbia',
     date: 'Sep, 2024',
     icon: 'pi pi-book',
@@ -61,6 +62,16 @@ const events = ref([
         name: 'Web and Cloud Computing (AWS)',
         tooltip:
           'How to use the web as a platform for data collection, computation, and publishing. Accessing data via scraping and APIs. Using the cloud for tasks that are beyond the capability of your local computing resources.',
+      },
+      {
+        name: 'Data Visualization',
+        tooltip:
+          'How to make principled and effective choices with respect to marks, spatial arrangement, and colour. Analysis, design, and implementation of interactive figures. How to provide multiple views, deal with complexity, and make difficult decisions about data reduction.',
+      },
+      {
+        name: 'Privacy, Ethics, and Security',
+        tooltip:
+          'The legal, ethical, and security issues concerning data, including aggregated data. Proactive compliance with rules and, in their absence, principles for the responsible management of sensitive data. Case studies.',
       },
     ],
   },
@@ -152,6 +163,8 @@ const events = ref([
     company: 'University of Victoria',
     date: 'Apr, 2020',
     icon: 'pi pi-graduation-cap',
+    summary:
+      "Began my journey at Chongqing University in China in 2013, transferred to University of Victoria in 2015, finished 6 co-ops, became a permanent resident, and finally graduated! Back then, I thought I was done with school for a while... Turns out, 'a while' wasn't very long. &#x1F600;",
   },
   {
     position: 'Web Application Developer / Front End Developer (co-op/part-time)',
@@ -231,13 +244,13 @@ const events = ref([
     ],
   },
   {
-    position:
-      'Pursued a Bachelor’s in Computer Science at the University of Victoria',
+    position: 'Pursued a Bachelor’s in Computer Science at the University of Victoria',
     company: 'University of Victoria',
     date: 'Sep, 2015',
     icon: 'pi pi-book',
     language: ['C', 'C++', 'Java', 'Python'],
     database: ['Postgres', 'SQL'],
+    summary: 'Captured Moments:'
   },
 ])
 </script>
@@ -296,7 +309,9 @@ const events = ref([
           style="margin-top: 0.25rem"
         />
         <span v-for="(course, index) in slotProps.item.courses" :key="course.name">
-          <u v-tooltip.top="{ autoHide: false, value: course.tooltip }" class="hover-underline">{{ course.name }}</u>
+          <u v-tooltip.top="{ autoHide: false, value: course.tooltip }" class="hover-underline">{{
+            course.name
+          }}</u>
           <span v-if="index !== slotProps.item.courses.length - 1">, </span>
         </span>
       </Panel>
