@@ -43,3 +43,12 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Run Application Using Docker
+
+```sh
+docker build -t my-vue-app .
+docker run -p 8080:80 my-vue-app
+```
+
+Now the Vue app is live at `http://localhost:8080`

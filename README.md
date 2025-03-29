@@ -1,12 +1,10 @@
 # MCatherine1994.github.io
 
-This is a personal profile website built using [Vue 3](https://vuejs.org/) and the [PrimeVue](https://primevue.org/) UI library, hosted on GitHub Pages. It showcases my professional journey, including work experience and projects in areas like Machine Learning and Data Visualization. The site highlights my skills, projects, and the technologies I work with, providing a comprehensive overview of my background in data science and software development.
+This is a personal profile website built using [Vue 3](https://vuejs.org/) Typescript and the [PrimeVue](https://primevue.org/) UI library, hosted on GitHub Pages. It showcases my professional journey, including work experience and projects in areas like Machine Learning and Data Visualization. The site highlights my skills, projects, and the technologies I work with, providing a comprehensive overview of my background in data science and software development.
 
-### Demo
+## Demo
 
-![demo.gif](demo.gif)
-
-## Developer note
+todo
 
 ### Work track
 
@@ -15,3 +13,8 @@ This is a personal profile website built using [Vue 3](https://vuejs.org/) and t
 - [x] Add tab switch and machine learning projects (Completed on 2025-03-25)
 - [x] Improve self-introduction in the sidebar (Completed on 2025-03-25)
 - [x] Add main course introduction for UBC MDS (Completed on 2025-03-25)
+- [x] Make sure application is responsive (Completed on 2025-03-27)  
+- [x] Add memory photos for UVIC, and vlogs for UBC (Completed on 2025-03-27, 2025-03-28)  
+- [x] Pull out journey data and load as service (Completed on 2025-03-28)
+- [x] Setup github workflow to run unit tests (Completed on 2025-03-28)  
+- [x] Add Dockerfile to run the application (Completed on 2025-03-28)
