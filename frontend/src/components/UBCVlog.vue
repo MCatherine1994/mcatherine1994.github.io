@@ -3,10 +3,10 @@ import { ref, onMounted } from 'vue'
 
 // Video list
 const videos = ref([
-  { src: '/video/VID_1.MP4' },
-  { src: '/video/VID_2.MP4' },
-  { src: '/video/VID_3.MP4' },
-  { src: '/video/VID_4.MP4' },
+  { src: '/video/VID_1.mp4' },
+  { src: '/video/VID_2.mp4' },
+  { src: '/video/VID_3.mp4' },
+  { src: '/video/VID_4.mp4' },
 ])
 
 // Video references
