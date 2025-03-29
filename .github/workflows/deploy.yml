@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Runs on push or merge to main
+      - main  # Runs on push or merge to main
 
   workflow_dispatch: # Allows manual deployment trigger
 
@@ -26,19 +26,18 @@ jobs:
           node-version: 22
 
       - name: Install Dependencies
-        run: |
-          cd frontend
-          npm install
+        run: npm install
 
       - name: Build Project
-        run: |
-          cd frontend
-          npm run build
+        run: npm run build
+
+      - name: Debug - List Files After Build
+        run: ls -lah dist  # Check if dist exists after build
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: frontend/dist
+          path: dist  # Since project is in root, dist is directly here
 
   deploy:
     needs: build

@@ -26,12 +26,8 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: |
-          cd frontend
-          npm install
+        run: npm install
 
       # Run unit tests
       - name: Run Unit Tests
-        run: |
-          cd frontend
-          npm run test:unit
+        run: npm run test:unit

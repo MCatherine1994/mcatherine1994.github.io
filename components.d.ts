@@ -8,10 +8,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Button: typeof import('primevue/button')['default']
-    Carousel: typeof import('primevue/carousel')['default']
-    EducationSection: typeof import('./src/components/LifeJourney.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     LifeJourney: typeof import('./src/components/LifeJourney.vue')['default']
     MainPanel: typeof import('./src/components/MainPanel.vue')['default']
     MLProjects: typeof import('./src/components/MLProjects.vue')['default']
