@@ -26,15 +26,19 @@ jobs:
           node-version: 22
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          cd frontend
+          npm install
 
       - name: Build Project
-        run: npm run build
+        run: |
+          cd frontend
+          npm run build
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./dist # Upload built Vue files
+          path: frontend/dist
 
   deploy:
     needs: build
