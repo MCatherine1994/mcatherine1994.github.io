@@ -59,6 +59,13 @@ docker run -p 8080:80 my-vue-app
 
 Now the Vue app is live at `http://localhost:8080`
 
+#### Deploy the application
+
+```sh
+npm run build
+npm run deploy
+```
+
 ### Work track
 
 - [x] Initialize the website and create the sidebar (Completed on 2025-03-22)
