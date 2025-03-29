@@ -65,6 +65,7 @@ onMounted(() => {
           class="video-player"
         >
           <source :src="video.src" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
         <!-- Play Button Overlay (if video is paused) -->
         <div v-if="isPaused[index]" class="play-button" @click="togglePlay(index)"> <i class="pi pi-play"></i></div>
