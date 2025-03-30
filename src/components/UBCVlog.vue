@@ -1,56 +1,56 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
 // Video list
 const videos = ref([
-  { src: '/video/VID_1.mp4' },
-  { src: '/video/VID_2.mp4' },
-  { src: '/video/VID_3.mp4' },
-  { src: '/video/VID_4.mp4' },
-])
+  { src: "/video/VID_1.mp4" },
+  { src: "/video/VID_2.mp4" },
+  { src: "/video/VID_3.mp4" },
+  { src: "/video/VID_4.mp4" },
+]);
 
 // Video references
-const videoRefs = ref<HTMLVideoElement[]>([])
+const videoRefs = ref<HTMLVideoElement[]>([]);
 
 // Track paused state
-const isPaused = ref(new Array(videos.value.length).fill(true))
+const isPaused = ref(new Array(videos.value.length).fill(true));
 
 // Track video progress (seek bar)
-const videoProgress = ref(new Array(videos.value.length).fill(0))
+const videoProgress = ref(new Array(videos.value.length).fill(0));
 
 // Store video duration for each video
-const videoDurations = ref(new Array(videos.value.length).fill(0))
+const videoDurations = ref(new Array(videos.value.length).fill(0));
 
 // Function to toggle play/pause
 const togglePlay = (index: number) => {
-  const video = videoRefs.value[index]
+  const video = videoRefs.value[index];
   if (video.paused) {
-    video.play()
-    isPaused.value[index] = false
+    video.play();
+    isPaused.value[index] = false;
   } else {
-    video.pause()
-    isPaused.value[index] = true
+    video.pause();
+    isPaused.value[index] = true;
   }
-}
+};
 
 // Update progress bar as video plays
 const updateProgress = (index: number) => {
-  const video = videoRefs.value[index]
-  videoProgress.value[index] = video.currentTime
-  videoDurations.value[index] = video.duration
-}
+  const video = videoRefs.value[index];
+  videoProgress.value[index] = video.currentTime;
+  videoDurations.value[index] = video.duration;
+};
 
 // Seek video when dragging the slider
 const seekVideo = (index: number) => {
-  const video = videoRefs.value[index]
-  if (!video) return
-  video.currentTime = videoProgress.value[index]
-}
+  const video = videoRefs.value[index];
+  if (!video) return;
+  video.currentTime = videoProgress.value[index];
+};
 
 // Ensure video refs are properly assigned on mount
 onMounted(() => {
-  videoRefs.value = videoRefs.value.slice(0, videos.value.length)
-})
+  videoRefs.value = videoRefs.value.slice(0, videos.value.length);
+});
 </script>
 
 <template>
@@ -68,7 +68,9 @@ onMounted(() => {
           Your browser does not support the video tag.
         </video>
         <!-- Play Button Overlay (if video is paused) -->
-        <div v-if="isPaused[index]" class="play-button" @click="togglePlay(index)"> <i class="pi pi-play"></i></div>
+        <div v-if="isPaused[index]" class="play-button" @click="togglePlay(index)">
+          <i class="pi pi-play"></i>
+        </div>
         <!-- Seek Bar -->
         <div style="margin-top: 0.4rem">
           <Slider

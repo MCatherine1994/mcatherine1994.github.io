@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Accordion from 'primevue/accordion'
-import AccordionPanel from 'primevue/accordionpanel'
-import AccordionHeader from 'primevue/accordionheader'
-import AccordionContent from 'primevue/accordioncontent'
-import Tag from 'primevue/tag'
+import Accordion from "primevue/accordion";
+import AccordionPanel from "primevue/accordionpanel";
+import AccordionHeader from "primevue/accordionheader";
+import AccordionContent from "primevue/accordioncontent";
+import Tag from "primevue/tag";
 </script>
 
 <template>
@@ -81,7 +81,11 @@ import Tag from 'primevue/tag'
               initial loading takes around 2 mins because we are on a free server.</small
             >
           </p>
-          <img src="@/assets/img/project_pharma_demo.gif" alt="GIF" style="width: 95%; height: auto"/>
+          <img
+            src="@/assets/img/project_pharma_demo.gif"
+            alt="GIF"
+            style="width: 95%; height: auto"
+          />
         </AccordionContent>
       </AccordionPanel>
       <AccordionPanel value="2">
@@ -111,7 +115,11 @@ import Tag from 'primevue/tag'
               >https://github.ubc.ca/mds-2024-25/DSCI_532_individual-assignment_cmeng</a
             >
           </p>
-          <img src="@/assets/img/project_country_demo.gif" alt="GIF" style="width: 95%; height: auto" />
+          <img
+            src="@/assets/img/project_country_demo.gif"
+            alt="GIF"
+            style="width: 95%; height: auto"
+          />
         </AccordionContent>
       </AccordionPanel>
     </Accordion>

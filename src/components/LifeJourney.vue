@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { ref, defineOptions, onMounted } from 'vue'
-import Timeline from 'primevue/timeline'
-import Tag from 'primevue/tag'
-import Panel from 'primevue/panel'
-import PanelMenu from 'primevue/panelmenu'
-import Tooltip from 'primevue/tooltip'
-import Carousel from 'primevue/carousel'
-import UBCVlog from '@/components/UBCVlog.vue'
-import { MemoryService } from '@/service/MemoryService'
-import { JourneySerivce } from '@/service/JourneyService'
+import { ref, defineOptions, onMounted } from "vue";
+import Timeline from "primevue/timeline";
+import Tag from "primevue/tag";
+import Panel from "primevue/panel";
+import PanelMenu from "primevue/panelmenu";
+import Tooltip from "primevue/tooltip";
+import Carousel from "primevue/carousel";
+import UBCVlog from "@/components/UBCVlog.vue";
+import { MemoryService } from "@/service/MemoryService";
+import { JourneySerivce } from "@/service/JourneyService";
 
 defineOptions({
   directives: {
     Tooltip, // register Primevue Tooltip locally
   },
-})
+});
 
 onMounted(() => {
-  MemoryService.getVicMemory().then((data) => (vicMemorys.value = data))
-  JourneySerivce.getJourney().then((data) => (events.value = data))
-})
+  MemoryService.getVicMemory().then((data) => (vicMemorys.value = data));
+  JourneySerivce.getJourney().then((data) => (events.value = data));
+});
 
-const vicMemorys = ref() // image informations for study in Victoria
-const expandedKeys = ref({})
-const events = ref()
+const vicMemorys = ref(); // image informations for study in Victoria
+const expandedKeys = ref({});
+const events = ref();
 </script>
 
 <template>

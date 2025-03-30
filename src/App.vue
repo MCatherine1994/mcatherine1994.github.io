@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Splitter from 'primevue/splitter'
-import SplitterPanel from 'primevue/splitterpanel'
+import Splitter from "primevue/splitter";
+import SplitterPanel from "primevue/splitterpanel";
 
-import SideBar from '@/components/SideBar.vue'
-import MainPanel from '@/components/MainPanel.vue'
+import SideBar from "@/components/SideBar.vue";
+import MainPanel from "@/components/MainPanel.vue";
 </script>
 
 <template>

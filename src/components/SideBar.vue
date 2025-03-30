@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import Avatar from 'primevue/avatar'
-import ScorpioIcon from '@/components/icons/ScorpioIcon.vue'
+import Avatar from "primevue/avatar";
+import ScorpioIcon from "@/components/icons/ScorpioIcon.vue";
+import Tooltip from "primevue/tooltip";
+
+defineOptions({
+  directives: {
+    Tooltip, // register Primevue Tooltip locally
+  },
+});
 </script>
 
 <template>
@@ -26,6 +33,15 @@ import ScorpioIcon from '@/components/icons/ScorpioIcon.vue'
     Go wherever your heart leads you—boldly and confidently, with no hesitation.
   </h4>
   <h4 style="margin-top: 0.5rem">本心指引你去哪里， 你就大大方方地去，理直气壮地去。</h4>
+  <a href="https://github.com/MCatherine1994">
+    <i class="pi pi-github sidebar-icon"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/da-catherine-meng-568800146/">
+    <i class="pi pi-linkedin sidebar-icon"></i>
+  </a>
+  <a href="/resume.pdf" download="resume.pdf" v-tooltip="'Download Resume'">
+    <i class="pi pi-file-pdf sidebar-icon"></i>
+  </a>
 </template>
 
 <style scoped>
