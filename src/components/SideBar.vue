@@ -12,7 +12,7 @@ defineOptions({
 
 <template>
   <Avatar
-    image="/da.png"
+    image="/self.png"
     class="mr-2 profile-img"
     size="xlarge"
     shape="circle"
@@ -38,9 +38,6 @@ defineOptions({
   </a>
   <a href="https://www.linkedin.com/in/da-catherine-meng-568800146/">
     <i class="pi pi-linkedin sidebar-icon"></i>
-  </a>
-  <a href="/resume.pdf" download="resume.pdf" v-tooltip="'Download Resume'">
-    <i class="pi pi-file-pdf sidebar-icon"></i>
   </a>
 </template>
 

@@ -14,7 +14,6 @@ import MLProjects from "@/components/MLProjects.vue";
       <TabList>
         <Tab value="journey">Journey</Tab>
         <Tab value="projects">Machine Learning Projects</Tab>
-        <!-- <Tab value="personal">Peronsal Life</Tab> -->
       </TabList>
       <TabPanels style="min-height: 100vh">
         <TabPanel value="journey">
@@ -23,9 +22,6 @@ import MLProjects from "@/components/MLProjects.vue";
         <TabPanel value="projects">
           <MLProjects />
         </TabPanel>
-        <!-- <TabPanel value="personal">
-          <p class="m-0">placeholder</p>
-        </TabPanel> -->
       </TabPanels>
     </Tabs>
   </div>
