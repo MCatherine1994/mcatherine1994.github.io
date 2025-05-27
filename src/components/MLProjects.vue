@@ -8,8 +8,43 @@ import Tag from "primevue/tag";
 
 <template>
   <div class="card">
-    <Accordion :value="['0', '1', '2']" multiple>
+    <Accordion :value="['0', '1', '2', '3']" multiple>
       <AccordionPanel value="0">
+        <AccordionHeader>
+          <span class="flex items-center gap-2 w-full">
+            <Tag severity="info" value="Machine Learning" class="project-tag" />
+            <span class="font-bold whitespace-nowrap project-tag"
+              >Credit Card Default Prediction (2024)</span
+            >
+            <Tag severity="warn" value="Python Skilearn" class="project-tag" />
+          </span>
+        </AccordionHeader>
+        <AccordionContent>
+          <p class="m-0">
+            A machine learning classification project predicting credit card default. 
+            This project follows the complete ML workflow—starting with exploratory data analysis (EDA), 
+            followed by feature engineering, feature selection and importance analysis, 
+            model comparison, and hyperparameter optimization. 
+            It evaluates and compares the performance of <strong>Logistic Regression</strong>, 
+            <strong>Random Forest</strong>, <strong>LightGBM</strong>, and <strong>XGBoost models</strong>.
+          </p>
+          <p class="m-0">
+            <i class="pi pi-github icon"></i>
+            Github Repository:
+            <a href="https://github.com/MCatherine1994/credit-card-default-prediction"
+              >https://github.com/MCatherine1994/credit-card-default-prediction</a
+            >
+          </p>
+          <p class="m-0">
+            <i class="pi pi-receipt icon"></i> Quarto Report:
+            <a
+              href="https://mcatherine1994.github.io/credit-card-default-prediction/project.html"
+              >https://mcatherine1994.github.io/credit-card-default-prediction/project.html</a
+            >
+          </p>
+        </AccordionContent>
+      </AccordionPanel>
+      <AccordionPanel value="1">
         <AccordionHeader>
           <span class="flex items-center gap-2 w-full">
             <Tag severity="info" value="Machine Learning" class="project-tag" />
@@ -47,7 +82,7 @@ import Tag from "primevue/tag";
           </p>
         </AccordionContent>
       </AccordionPanel>
-      <AccordionPanel value="1">
+      <AccordionPanel value="2">
         <AccordionHeader
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
@@ -88,7 +123,7 @@ import Tag from "primevue/tag";
           />
         </AccordionContent>
       </AccordionPanel>
-      <AccordionPanel value="2">
+      <AccordionPanel value="3">
         <AccordionHeader
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
