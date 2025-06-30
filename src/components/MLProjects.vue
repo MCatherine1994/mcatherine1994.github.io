@@ -8,8 +8,65 @@ import Tag from "primevue/tag";
 
 <template>
   <div class="card">
-    <Accordion :value="['0', '1', '2', '3']" multiple>
-      <AccordionPanel value="0">
+    <Accordion
+      :value="[
+        'search-engine',
+        'credit-prediction',
+        'academic-prediction',
+        'pharma-dashboard',
+        'country-dashboard',
+      ]"
+      multiple
+    >
+      <AccordionPanel value="search-engine">
+        <AccordionHeader>
+          <span class="flex items-center gap-2 w-full">
+            <Tag severity="info" value="Machine Learning" class="project-tag" />
+            <span class="font-bold whitespace-nowrap project-tag"
+              >Find me the better product (2025 MDS Audience Choice Award)</span
+            >
+            <Tag severity="warn" value="Hugging Face" class="project-tag" />
+            <Tag severity="warn" value="Python LangChain" class="project-tag" />
+          </span>
+        </AccordionHeader>
+        <AccordionContent>
+          <p class="m-0">
+            The goal of this project is to design and implement a fast, scalable multimodal search
+            engine for FinlyWealth, an affiliate marketing platform expanding into e-commerce. The
+            system enables users to search for products using text, images, or a combination of both
+            by capturing the semantic meaning of queries—not just keywords. To achieve this, we use
+            a hybrid retrieval strategy that combines
+            <strong>CLIP</strong> and <strong>MiniLM</strong> embeddings with
+            <strong>FAISS</strong> for efficient large-scale similarity search. Retrieved results
+            are further refined using an <strong>LLM-based</strong> reranking module, which reorders
+            candidates to prioritize the most relevant items. The full stack includes a Streamlit
+            frontend, a Flask API backend, and a <strong>vector store</strong> to support
+            embedding-based retrieval at scale. For more information, please refer to our paper.
+          </p>
+          <p class="m-0">
+            <i class="pi pi-github icon"></i>
+            Github Repository:
+            <a href="https://github.com/FinlyWealth/mds-finly-search"
+              >https://github.com/FinlyWealth/mds-finly-search</a
+            >
+          </p>
+          <p class="m-0">
+            <i class="pi pi-receipt icon"></i> Paper:
+            <a
+              href="https://finlywealth.github.io/mds-finly-search/report/final/capstone_final_report.html"
+              >https://finlywealth.github.io/mds-finly-search/report/final/capstone_final_report.html</a
+            >
+          </p>
+          <p class="m-0">
+            <i class="pi pi-link icon"></i> Deployment:
+            <a href="https://finly-frontend-41055984557.us-west1.run.app/"
+              >https://finly-frontend-41055984557.us-west1.run.app/</a
+            >
+          </p>
+          <img src="@/assets/img/capstone_demo.gif" alt="GIF" style="width: 95%; height: auto" />
+        </AccordionContent>
+      </AccordionPanel>
+      <AccordionPanel value="credit-prediction">
         <AccordionHeader>
           <span class="flex items-center gap-2 w-full">
             <Tag severity="info" value="Machine Learning" class="project-tag" />
@@ -21,12 +78,12 @@ import Tag from "primevue/tag";
         </AccordionHeader>
         <AccordionContent>
           <p class="m-0">
-            A machine learning classification project predicting credit card default. 
-            This project follows the complete ML workflow—starting with exploratory data analysis (EDA), 
-            followed by feature engineering, feature selection and importance analysis, 
-            model comparison, and hyperparameter optimization. 
-            It evaluates and compares the performance of <strong>Logistic Regression</strong>, 
-            <strong>Random Forest</strong>, <strong>LightGBM</strong>, and <strong>XGBoost models</strong>.
+            A machine learning classification project predicting credit card default. This project
+            follows the complete ML workflow—starting with exploratory data analysis (EDA), followed
+            by feature engineering, feature selection and importance analysis, model comparison, and
+            hyperparameter optimization. It evaluates and compares the performance of
+            <strong>Logistic Regression</strong>, <strong>Random Forest</strong>,
+            <strong>LightGBM</strong>, and <strong>XGBoost models</strong>.
           </p>
           <p class="m-0">
             <i class="pi pi-github icon"></i>
@@ -37,14 +94,13 @@ import Tag from "primevue/tag";
           </p>
           <p class="m-0">
             <i class="pi pi-receipt icon"></i> Quarto Report:
-            <a
-              href="https://mcatherine1994.github.io/credit-card-default-prediction/project.html"
+            <a href="https://mcatherine1994.github.io/credit-card-default-prediction/project.html"
               >https://mcatherine1994.github.io/credit-card-default-prediction/project.html</a
             >
           </p>
         </AccordionContent>
       </AccordionPanel>
-      <AccordionPanel value="1">
+      <AccordionPanel value="academic-prediction">
         <AccordionHeader>
           <span class="flex items-center gap-2 w-full">
             <Tag severity="info" value="Machine Learning" class="project-tag" />
@@ -82,7 +138,7 @@ import Tag from "primevue/tag";
           </p>
         </AccordionContent>
       </AccordionPanel>
-      <AccordionPanel value="2">
+      <AccordionPanel value="pharma-dashboard">
         <AccordionHeader
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
@@ -123,7 +179,7 @@ import Tag from "primevue/tag";
           />
         </AccordionContent>
       </AccordionPanel>
-      <AccordionPanel value="3">
+      <AccordionPanel value="country-dashboard">
         <AccordionHeader
           ><span class="flex items-center gap-2 w-full">
             <Tag severity="success" value="Data Visualization" class="project-tag" />
