@@ -48,7 +48,7 @@ describe('SideBar.vue', () => {
   });
 
   it('renders inspirational quotes', () => {
-    expect(wrapper.text()).toContain('Go wherever your heart leads you');
+    expect(wrapper.text()).toContain('Desire without fear. Action without hesitation.');
   });
 
   it('renders all sidebar links', () => {
